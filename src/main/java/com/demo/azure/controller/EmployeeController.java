@@ -20,6 +20,12 @@ public class EmployeeController {
 	private EmployeeServiceImpl employeeService;
 	
 	
+	@GetMapping("/")
+	public ResponseEntity<String> greeting(){
+		return new ResponseEntity<String>("Welcome to the first time azure deployement!", HttpStatus.OK);
+	}
+	
+	
 	@PostMapping("/employees")
 	public ResponseEntity<String> saveEmployee(@RequestBody Employee employee){
 		employeeService.saveEmployee(employee);
